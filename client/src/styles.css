@@ -2,6 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --main-color:#738290;
+    --hero-color:#D8C4A1;
+    --hero-manifest:#000;
+    --secondary-color:#A1B5D8;
+    --text-color:#fff;
+    --interest-color:#C2D8B9;
+}
+.fullPage{
+    min-height: 100vh;
+    min-width:  100vw;
+}
+
+.medical-bg{
+    background-image: url("resources/medical.jpg");
+}
+
+.title-color{
+    color:var(--hero-color);
+}
+
+.hero-manifest{
+    color:var(--hero-manifest);
+}
+.main-color{
+    background-color:var(--main-color) ;
+}
+
+.secondary_color{
+    background-color:var(--secondary-color);
+}
+
+.text-color{
+    color: var(--text-color);
+}
+
+.interest{
+    background-color: var(--interest-color);
+}
+
 
 body {
     margin: 0;
