@@ -10,6 +10,8 @@ import {Paradigm} from "../components/Paradigm.tsx";
 import {Navigate, Route, Routes} from "react-router-dom";
 import {Diseases} from "./Diseases.tsx";
 import{Patients as Pat} from './Patients.tsx';
+import backgroundImage from "../resources/medical.jpg";
+import {HeroMessage} from "../components/Hero.tsx";
 
 
 export default function Home() {
@@ -23,12 +25,22 @@ export default function Home() {
         <div className={'min-h-svh bg-accent flex-col justify-center items-stretch'}>
             <Navigation navTitles={NAVIGATION} location={NAVROUTE}></Navigation>
             <div className={'flex-grow'}>
-                <Routes>
-                    <Route path="/" element={<Navigate to="/home" replace />} />
-                    <Route path="/home" element={<Paradigm />}/>
-                    <Route path="/patients" element={<Pat />} />
-                    <Route path="/diseases" element={<Diseases />} />
-                </Routes>
+                <div
+                    className="hero">
+                    <img src={backgroundImage}/>
+                    <div className="hero-overlay bg-opacity-0"></div>
+                    <div className="hero-content text-center">
+                        <div className="max-w-md">
+                            <Routes>
+                                <Route path="/" element={<Navigate to="/home" replace/>}/>
+                                <Route path="/home" element={<HeroMessage message={null} main_header={null} secondary_header={null}/>}/>
+                                <Route path="/patients" element={<Pat/>}/>
+                                <Route path="/diseases" element={<Diseases/>}/>
+                            </Routes>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <Footer/>
         </div>
