@@ -5,6 +5,8 @@ import Home from "../pages/Home.tsx";
 import {useAtom} from "jotai";
 import {ThemeAtom} from "../atoms/ThemeAtom.tsx";
 
+
+
 const App = () => {
     const [theme, setTheme] = useAtom(ThemeAtom);
     useEffect(() => {

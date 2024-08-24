@@ -6,7 +6,6 @@ import {Navigation} from "../components/Navigation.tsx";
 import {NAVIGATION, NAVROUTE} from "../models/navigation.tsx";
 
 import {Footer} from "../components/Footer.tsx";
-import {Paradigm} from "../components/Paradigm.tsx";
 import {Navigate, Route, Routes} from "react-router-dom";
 import {Diseases} from "./Diseases.tsx";
 import{Patients as Pat} from './Patients.tsx';
@@ -25,12 +24,11 @@ export default function Home() {
         <div className={'min-h-svh bg-accent flex-col justify-center items-stretch'}>
             <Navigation navTitles={NAVIGATION} location={NAVROUTE}></Navigation>
             <div className={'flex-grow'}>
-                <div
-                    className="hero">
+                <div className="hero ">
                     <img src={backgroundImage}/>
                     <div className="hero-overlay bg-opacity-0"></div>
                     <div className="hero-content text-center">
-                        <div className="max-w-md">
+                        <div className="max-w-full">
                             <Routes>
                                 <Route path="/" element={<Navigate to="/home" replace/>}/>
                                 <Route path="/home" element={<HeroMessage message={null} main_header={null} secondary_header={null}/>}/>
