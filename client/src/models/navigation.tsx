@@ -1,5 +1,5 @@
-export const NAVROUTE:string[]=[  'patients', "diseases"]
+export const NAVROUTE:string[]=[  'patients', "diagnosis","diseases"]
 
 
 
-export const NAVIGATION:string[] = ['Patients','Diseases'];
+export const NAVIGATION:string[] = ['Patients','Diagnosis',"Diseases"];

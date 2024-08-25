@@ -34,7 +34,7 @@ export function AddDiagnosis({addDiagnosis}:AddDiagnosisFunction){
 
 
     // @ts-ignore
-    async function createDiagnosis(diagnosis: Diagnosis): Promise<AddDiagnosisResponse> {
+    async function createDiagnosis(diagnosis: Diagnosis|null): Promise<AddDiagnosisResponse> {
         try {
             const response: AxiosResponse<AddDiagnosisResponse> = await axios.post(
                 'http://localhost:3000/diagnoses',

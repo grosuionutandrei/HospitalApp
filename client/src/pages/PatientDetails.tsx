@@ -4,7 +4,7 @@ import axios, {AxiosResponse} from "axios";
 
 
 import {AddDiagnosis, AddDiagnosisResponse} from "../components/AddDiagnosis.tsx";
-interface Diagnosis {
+export interface Diagnosis {
     diagnosis_date: Date;
     patients: {
         name: string;
@@ -49,8 +49,6 @@ export function PatientDetails(){
 
 
     function extractDiagnose(disease:AddDiagnosisResponse){
-
-
         const diagnose = {
              diagnosis_date:new Date(disease.diagnosis_date),
              patients: {name:currentDiagnoses.length > 0 ? currentDiagnoses[0].patients.name : "No patient data available"},

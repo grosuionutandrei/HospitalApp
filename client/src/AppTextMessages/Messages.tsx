@@ -4,5 +4,6 @@ export const enum  Messages{
    DEFAULT_HERO=" Our intuitive platform revolutionizes the way you manage patient data, diagnoses, and disease " +
 "associations. With real-time insights, comprehensive records, and advanced analytics, you can "+
 "focus on what truly matters—providing exceptional care. Simplify your workflow and enhance "+
-"patient outcomes with the ultimate tool for modern healthcare professionals. "
+"patient outcomes with the ultimate tool for modern healthcare professionals. ",
+   SUCCESS= "Successfully saved "
 }
