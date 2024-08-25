@@ -7,6 +7,7 @@ import {PatientsAtom} from "../atoms/PatientsAthom.tsx";
 import {EditButton} from "../components/EditButton.tsx";
 import {SidePanel} from "../components/SidePanel.tsx";
 import {DeleteButton} from "../components/DeleteButton.tsx";
+import {useNavigate} from "react-router-dom";
 
 export function Patients() {
     const [getPatients, setPatients] = useAtom(PatientsAtom);
@@ -22,15 +23,16 @@ export function Patients() {
             setPatients(getPatients.filter((patient) => patient.id !== parseInt(id) && patient.name !== name))
         })
     }
+    const navigate = useNavigate();
 
 
     return (
         <div className={'flex justify-between items-center flex-wrap border-2 border-blue-200 '}>
             <div className="overflow-x-auto overflow-y-auto max-h-96">
-                <table className="table table-lg table-pin-rows table-pin-cols border-blue-200  ">
+                <table className="table table-lg table-pin-rows secondary_color ">
                     <thead>
                     <tr>
-                        <th></th>
+                        <th className={'text-color'}></th>
                         <td>Name</td>
                         <td>Edit</td>
                         <td>Delete</td>
@@ -45,7 +47,12 @@ export function Patients() {
                             return (
                                 <tr key={item.id} className={`${color}`}>
                                     <th>{index + 1}</th>
-                                    <td className={'text-black'}>{item.name}</td>
+                                    <td className={'text-black'}>
+                                        <button className="btn btn-outline interest text-color"
+                                                onClick={() => navigate(`/patients/${item.id}`)}>
+                                            {item.name}
+                                        </button>
+                                    </td>
                                     <td>
                                         <EditButton id={item.id} name={item.name}/>
                                     </td>

@@ -4,6 +4,7 @@ import {useState} from "react";
 import {apiClient} from "../apiClient.ts";
 import {AxiosResponse} from "axios";
 import {Patients} from "../Api.ts";
+import toast from "react-hot-toast";
 
 export function CreatePatient(){
    const [getAllPatients,setAllPatients]=  useAtom(PatientsAtom);
@@ -16,6 +17,9 @@ export function CreatePatient(){
 
        ).then((result: AxiosResponse<Patients[]>)=>{
            setAllPatients([...getAllPatients,result.data[0]])
+           toast.success(`Patient ${createdPatient} registered!`);
+       }).catch(()=>{
+           toast.error(`Error when registering patient ${createdPatient}`)
        })
 
    } ;
@@ -23,7 +27,7 @@ export function CreatePatient(){
 
     return (
         <div>
-            <h3>Add Patient</h3>
+            <h3 className={'text-black'}>Add Patient</h3>
             <label className="input input-bordered flex items-center gap-2">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

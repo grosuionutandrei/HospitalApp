@@ -11,6 +11,7 @@ import {Diseases} from "./Diseases.tsx";
 import{Patients as Pat} from './Patients.tsx';
 import backgroundImage from "../resources/medical.jpg";
 import {HeroMessage} from "../components/Hero.tsx";
+import {PatientDetails} from "./PatientDetails.tsx";
 
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
                                 <Route path="/" element={<Navigate to="/home" replace/>}/>
                                 <Route path="/home" element={<HeroMessage message={null} main_header={null} secondary_header={null}/>}/>
                                 <Route path="/patients" element={<Pat/>}/>
+                                <Route path={"/patients/:patientId"} element={<PatientDetails/>}/>
                                 <Route path="/diseases" element={<Diseases/>}/>
                             </Routes>
                         </div>
