@@ -30,7 +30,7 @@ export default function Home() {
                     <img src={backgroundImage}/>
                     <div className="hero-overlay bg-opacity-0"></div>
                     <div className="hero-content text-center">
-                        <div className="max-w-full">
+                        <div className="max-w-xl mx-auto">
                             <Routes>
                                 <Route path="/" element={<Navigate to="/home" replace/>}/>
                                 <Route path="/home" element={<HeroMessage message={null} main_header={null} secondary_header={null}/>}/>

@@ -9,6 +9,8 @@ import {SidePanel} from "../components/SidePanel.tsx";
 import {DeleteButton} from "../components/DeleteButton.tsx";
 import {useNavigate} from "react-router-dom";
 
+
+
 export function Patients() {
     const [getPatients, setPatients] = useAtom(PatientsAtom);
     useEffect(() => {
